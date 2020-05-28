@@ -1,0 +1,9 @@
+D:\dotnetcore\react-dotnet\crmnext\IDAL\bin\Debug\IDAL.dll
+D:\dotnetcore\react-dotnet\crmnext\IDAL\bin\Debug\IDAL.pdb
+D:\dotnetcore\react-dotnet\crmnext\IDAL\bin\Debug\MODEL.dll
+D:\dotnetcore\react-dotnet\crmnext\IDAL\bin\Debug\MODEL.pdb
+D:\dotnetcore\react-dotnet\crmnext\IDAL\obj\Debug\IDAL.csprojAssemblyReference.cache
+D:\dotnetcore\react-dotnet\crmnext\IDAL\obj\Debug\IDAL.csproj.CoreCompileInputs.cache
+D:\dotnetcore\react-dotnet\crmnext\IDAL\obj\Debug\IDAL.csproj.CopyComplete
+D:\dotnetcore\react-dotnet\crmnext\IDAL\obj\Debug\IDAL.dll
+D:\dotnetcore\react-dotnet\crmnext\IDAL\obj\Debug\IDAL.pdb

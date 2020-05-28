@@ -1,0 +1,7 @@
+D:\dotnetcore\react-dotnet\crmnext\MODEL\bin\Debug\MODEL.dll
+D:\dotnetcore\react-dotnet\crmnext\MODEL\bin\Debug\MODEL.pdb
+D:\dotnetcore\react-dotnet\crmnext\MODEL\bin\Debug\System.ComponentModel.Annotations.dll
+D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.csproj.CoreCompileInputs.cache
+D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.csproj.CopyComplete
+D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.dll
+D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.pdb
