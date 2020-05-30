@@ -41,5 +41,16 @@ namespace DAL
         {
             return reader.IsDBNull(reader.GetOrdinal(colName)) ? default(T) : (T)reader[colName];
         }
+
+        public static string GetStringValue(object value)
+        {
+            return (value ?? "").ToString();
+        }
+
+        public static int GetIntValue(object value)
+        {
+            return Convert.ToInt32(value);
+        }
+
     }
 }

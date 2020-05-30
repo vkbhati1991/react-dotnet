@@ -33,7 +33,7 @@ namespace APP.Controllers
             return Ok(message.ErrorMessage(user.UserId));
         }
 
-        [HttpPost]
+        [HttpDelete]
         public ActionResult DeleteUser(User user)
         {
             string errorStatus = _user.DeleteUser(user);

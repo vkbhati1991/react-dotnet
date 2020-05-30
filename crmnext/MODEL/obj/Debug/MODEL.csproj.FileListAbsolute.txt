@@ -5,3 +5,4 @@ D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.csproj.CoreCompileInput
 D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.csproj.CopyComplete
 D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.dll
 D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.pdb
+D:\dotnetcore\react-dotnet\crmnext\MODEL\obj\Debug\MODEL.csprojAssemblyReference.cache
