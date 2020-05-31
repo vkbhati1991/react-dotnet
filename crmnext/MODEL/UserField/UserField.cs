@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODEL.User
+namespace MODEL.UserField
 {
-    public class User
+    public class UserField
     {
-        public int UserId { get; set; }
         [Required]
         [StringLength(100)]
         public string FirstName { get; set; }
@@ -57,6 +56,8 @@ namespace MODEL.User
         public string PermState { get; set; }
         public string PermCountry { get; set; }
         public string PermLandMark { get; set; }
+        public string CreatedOn { get; set; }
+        public string Role { get; set; }
         public int IsActive { get; set; }
     }
 }

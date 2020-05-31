@@ -1,4 +1,6 @@
+using DAL.StudentHelper;
 using DAL.UserHelper;
+using IDAL.IStudent;
 using IDAL.IUser;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +35,7 @@ namespace APP
             {
                 configuration.RootPath = "ClientApp/build";
             });
-            services.AddScoped<IUser, UserHelper>();
+            services.AddScoped<IStudent, StudentHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

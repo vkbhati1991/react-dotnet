@@ -148,6 +148,7 @@ namespace DAL.UserHelper
             if (reader.IsColoumnExist("PermLandMark"))
                 user.PermLandMark = DataReader.GetNullableString(reader, "PermLandMark");
 
+
             if (reader.IsColoumnExist("IsActive"))
                 user.IsActive = DataReader.GetNullableInt32(reader, "IsActive");
 
