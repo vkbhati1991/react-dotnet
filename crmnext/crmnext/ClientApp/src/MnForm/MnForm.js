@@ -1,144 +1,72 @@
-import React, { Component } from 'react';
-import MnLayout from '../MnLayout';
-
-class MnForm extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            fields: props.fields,
-            postData: ""
-        }
-
-        this.errorArray = [];
-    }
-
-    componentDidMount() {
-        this.setState({
-            postData: this.getPostData(),
-        });
-    }
-
-    checkValidation = (value, validations) => {
-
-        const { required, length } = validations;
-
-        if (required) {
-            const requiredMessage = required.message;
-            if (value === "") {
-                return {
-                    isError: true,
-                    message: requiredMessage
-                }
-            }
-        }
-
-        if (length) {
-            if (value.length < 5 || value.length > 20) {
-                return {
-                    isError: true,
-                    message: "length is small"
-                }
-            }
-        }
-
-        return {
-            isError: false,
-            message: "length is small"
-        }
-    }
-
-    validate = () => {
-        //Login For Validate all fields
-        const fieldsWithError = {};
-
-        Object.keys(this.state.fields).forEach((field) => {
-            const currentfield = this.state.fields[field];
-            const { isError, message } = this.checkValidation(currentfield.value, currentfield.validations);
-            const fieldIndex = this.errorArray.findIndex(f => f === field);
-            if (isError) {
-                currentfield["hasError"] = true;
-                currentfield["validateMessage"] = message;
-                fieldIndex < 0 && this.errorArray.push(field);
-            } else {
-                currentfield["hasError"] = false;
-                currentfield["validateMessage"] = "";
-                this.errorArray.splice(fieldIndex, 1);
-            }
-
-            fieldsWithError[field] = currentfield;
-
-        });
-
-        this.setState({
-            fields: fieldsWithError
-        })
-
-        return this.errorArray.length === 0;
-    }
+import React, { useState, useEffect } from 'react';
+import { MnLayout } from '../MnLayout';
+import { getPostData, validate } from "./FormUtility/index";
 
 
-    postOnSubmitData = () => {
-        if (this.validate()) {
-            this.props.handleOnSubmit && this.props.handleOnSubmit(this.state.postData);
+function MnForm(props) {
+
+    const { handleOnSubmit, actions, layout } = props;
+    const [fields, setFields] = useState(props.fields);
+    const [postData, setPostData] = useState(null);
+    const errorArray = [];
+
+    useEffect(() => {
+
+        const postdata = getPostData(props, fields);
+        setPostData(postdata);
+
+    }, [props, fields]);
+
+
+    const postOnSubmitData = () => {
+
+        const isValid = validate(fields, setFields, errorArray);
+
+        if (isValid) {
+            handleOnSubmit && handleOnSubmit(postData);
         }
         return null;
     }
-    
 
-    getPostData = () => {
-        const postDataObject = {};
+    function setValue(controkKey, fieldValue) {
 
-        Object.keys(this.props.postData).forEach((keys) => {
-            const fieldKey = this.props.postData[keys].key;
-
-            postDataObject[keys] = this.state.fields[fieldKey].value;
-        });
-
-        return postDataObject;
-    }
-
-    setValue = (controkKey, fieldValue) => {
-
-        const { ...fieldsCopy } = this.state.fields;
+        const { ...fieldsCopy } = fields;
 
         const field = fieldsCopy[controkKey];
         field["value"] = fieldValue;
 
-        this.setState({
-            fields: fieldsCopy,
-            postData: this.getPostData()
-        })
+        const pdata = getPostData(props, fields);
+
+        setFields(fieldsCopy);
+        setPostData(pdata);
+
     }
 
-    getMnLayout = () => {
+    function getMnLayout() {
         return (
             <div>
                 <MnLayout
-                    fields={this.state.fields}
-                    setValue={this.setValue}
-                    layout={this.props.layout}
+                    fields={fields}
+                    setValue={setValue}
+                    layout={layout}
                 />
             </div>
         );
 
     }
 
-    getFormActions = () => {
-        return this.props.actions.map((action, idx) => {
-            return <button onClick={this.postOnSubmitData} className="button button--brand">{action.text}</button>
+    function getFormActions() {
+        return actions.map((action, idx) => {
+            return <button key={idx} onClick={postOnSubmitData} className="button button--brand">{action.text}</button>
         });
     }
 
-    render() {
-
-        return (
-            <div className="MnForm">
-                {this.getMnLayout()}
-                {this.getFormActions()}
-            </div>
-        );
-
-    }
+    return (
+        <div className="MnForm">
+            {getMnLayout()}
+            {getFormActions()}
+        </div>
+    );
 }
 
-export default MnForm;
+export { MnForm };

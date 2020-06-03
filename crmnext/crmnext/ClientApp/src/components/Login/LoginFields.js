@@ -1,6 +1,6 @@
 import { CreateField } from "../../Utilities/index";
 
-const loginFormFields = {
+const LoginFormFields = {
 
     LOGIN_USERNAME: CreateField({
         controlKey: "LOGIN_USERNAME",
@@ -25,8 +25,4 @@ const loginFormFields = {
 }
 
 
-function LoginFormFields() {
-    return loginFormFields;
-}
-
-export default LoginFormFields();
+export { LoginFormFields }

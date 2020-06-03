@@ -27,7 +27,6 @@ namespace DAL.StudentHelper
                 new SqlParameter("@LastName", DataReader.GetStringValue(student.LastName)),
                 new SqlParameter("@Email", DataReader.GetStringValue(student.Email)),
                 new SqlParameter("@UserName", DataReader.GetStringValue(student.Email)),
-                new SqlParameter("@Password", DataReader.GetStringValue(student.Password)),
                 new SqlParameter("@Phone", DataReader.GetStringValue(student.Phone)),
                 new SqlParameter("@DOB", DataReader.GetStringValue(student.DOB)),
                 new SqlParameter("@DobInText", DataReader.GetStringValue(student.DobInText)),
@@ -108,7 +107,7 @@ namespace DAL.StudentHelper
                 new SqlParameter("@TransportFee", DataReader.GetStringValue(student.TransportFee)),
                 new SqlParameter("@IsHostal", DataReader.GetStringValue(student.IsHostal)),
                 new SqlParameter("@IsBoarding", DataReader.GetStringValue(student.IsBoarding)),
-                new SqlParameter("@IsLibrary", DataReader.GetStringValue(student.IsLibrary)),
+                 new SqlParameter("@IsLibrary", DataReader.GetStringValue(student.IsLibrary)),
 
                 outParam
             };

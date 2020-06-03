@@ -1,39 +1,38 @@
-import React, { Component } from "react";
-import Field from "../MnForm/Field";
+import React from "react";
+import { FieldWrapper } from "../MnForm/FieldWrapper";
 
-class MnLayout extends Component {
+function MnLayout(props) {
 
-    getRows = (rowsArray) => {
+    function getRows(rowsArray) {
         return rowsArray.map((cell, idx) => {
-            return this.getCells(cell);
-        })
+            return <div key={idx}>{getCells(cell)}</div>;
+        });
     }
-    getCells = (cellArray) => {
+
+    function getCells(cellArray) {
         return cellArray.Cells.map((field, idx) => {
-            return <div>{this.getField(field)}</div>;
-        })
+            return <div key={idx}>{getField(field)}</div>;
+        });
     }
-    getField = (field) => {
 
+    function getField(field) {
         const controlKey = field.ControlKey;
-        const fieldProps = this.props.fields[controlKey];
-        return <Field {...fieldProps} setValue={this.props.setValue} />;
-
-
+        const fieldProps = props.fields[controlKey];
+        return <FieldWrapper {...fieldProps} setValue={props.setValue} />;
     }
 
-    render() {
-        if (!this.props.layout) {
-            return;
-        }
-        const { Rows } = this.props.layout["Tabs"][0].Sections[0];
 
-        return (
-            <div className="mnLayout">
-                {this.getRows(Rows)}
-            </div>
-        );
+    if (!props.layout) {
+        return;
     }
+
+    const { Rows } = props.layout["Tabs"][0].Sections[0];
+
+    return (
+        <div className="mnLayout">
+            {getRows(Rows)}
+        </div>
+    );
 }
 
-export default MnLayout;
+export { MnLayout };

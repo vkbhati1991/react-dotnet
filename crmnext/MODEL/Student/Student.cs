@@ -54,5 +54,7 @@ namespace MODEL.Student
         public int IsBoarding { get; set; }
         public int IsLibrary { get; set; }
 
+        public int UserId { get; set; }
+
     }
 }

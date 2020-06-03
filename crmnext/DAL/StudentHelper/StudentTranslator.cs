@@ -38,12 +38,6 @@ namespace DAL.StudentHelper
             if (reader.IsColoumnExist("Email"))
                 student.Email = DataReader.GetNullableString(reader, "Email");
 
-            if (reader.IsColoumnExist("UserName"))
-                student.UserName = DataReader.GetNullableString(reader, "UserName");
-
-            if (reader.IsColoumnExist("Password"))
-                student.Password = DataReader.GetNullableString(reader, "Password");
-
             if (reader.IsColoumnExist("Phone"))
                 student.Phone = DataReader.GetNullableString(reader, "Phone");
 

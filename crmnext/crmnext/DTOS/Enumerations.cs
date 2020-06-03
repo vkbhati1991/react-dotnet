@@ -26,4 +26,11 @@ namespace APP.DTOS
         Detail360 = 2,
         Home = 4
     }
+
+    public enum ColumnFormater
+    { 
+        Progress = 1,
+        Image = 2,
+        Link = 3
+    }
 }

@@ -2,6 +2,8 @@ using DAL.StudentHelper;
 using DAL.UserHelper;
 using IDAL.IStudent;
 using IDAL.IUser;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,7 +13,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using MODEL.Authentication;
 using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace APP
 {
@@ -28,6 +34,34 @@ namespace APP
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = "http://localhost/",
+                        ValidAudience = "http://localhost/",
+                        IssuerSigningKey = new SymmetricSecurityKey( Encoding.UTF8.GetBytes("my_secreat_key_2020"))
+                    };
+
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnAuthenticationFailed = context =>
+                        {
+                            if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                            {
+                                context.Response.Headers.Add("Token Expired", "true");
+                            }
+
+                            return Task.CompletedTask;
+                        }
+                    };
+                });
+
+
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
@@ -35,6 +69,7 @@ namespace APP
             {
                 configuration.RootPath = "ClientApp/build";
             });
+            services.AddScoped<IUser, UserHelper>();
             services.AddScoped<IStudent, StudentHelper>();
         }
 
@@ -51,12 +86,15 @@ namespace APP
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

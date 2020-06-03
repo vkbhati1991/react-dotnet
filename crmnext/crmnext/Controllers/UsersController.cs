@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using APP.Messages;
 using IDAL.IUser;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MODEL.User;
 
 namespace APP.Controllers
-{
+{   
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase

@@ -1,5 +1,5 @@
 
-export const postData = {
+export const model = {
     username: {
         key: "LOGIN_USERNAME",
         value: "vinod@123"

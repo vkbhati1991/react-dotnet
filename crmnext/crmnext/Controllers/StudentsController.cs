@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using APP.Generators;
 using APP.Messages;
 using IDAL.IStudent;
 using Microsoft.AspNetCore.Http;
@@ -26,7 +28,9 @@ namespace APP.Controllers
         {
             List<Student> students = _student.GetAllStudents();
 
-            return Ok(students);
+            object studentListing = StudentListInfo.GetStudentListInfo(students);
+
+            return Ok(studentListing);
         }
 
         [HttpPost]

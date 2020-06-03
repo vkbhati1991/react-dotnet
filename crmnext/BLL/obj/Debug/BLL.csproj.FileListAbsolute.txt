@@ -3,3 +3,4 @@ D:\dotnetcore\react-dotnet\crmnext\BLL\bin\Debug\BLL.pdb
 D:\dotnetcore\react-dotnet\crmnext\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\dotnetcore\react-dotnet\crmnext\BLL\obj\Debug\BLL.dll
 D:\dotnetcore\react-dotnet\crmnext\BLL\obj\Debug\BLL.pdb
+D:\dotnetcore\react-dotnet\crmnext\BLL\obj\Debug\BLL.csprojAssemblyReference.cache

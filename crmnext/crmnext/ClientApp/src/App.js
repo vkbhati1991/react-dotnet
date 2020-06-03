@@ -6,6 +6,7 @@ import { Login } from './components/Login/Login';
 // import { FetchData } from './components/FetchData';
 
 export default class App extends Component {
+  
   static displayName = App.name;
 
   render() {
