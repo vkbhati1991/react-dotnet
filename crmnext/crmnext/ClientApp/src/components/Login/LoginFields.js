@@ -4,12 +4,13 @@ const LoginFormFields = {
 
     LOGIN_USERNAME: CreateField({
         controlKey: "LOGIN_USERNAME",
-        label: "username",
+        label: "Email id",
         className: "form-control",
-        placeholder: "UserName",
+        placeholder: "Email-id",
         value: "",
         validations: {
-            required: { message: "UserName is Required" }
+            required: { message: "Email-id is Required" },
+            pattern: {regex:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid Email-Id" }
         }
     }),
     LOGIN_PASSWORD: CreateField({

@@ -24,7 +24,7 @@ namespace APP.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllUsers()
+        public ActionResult GetAllStudents()
         {
             List<Student> students = _student.GetAllStudents();
 
@@ -34,7 +34,7 @@ namespace APP.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateUser(Student student)
+        public ActionResult CreateStudents(Student student)
         {
             string errorStatus = _student.CreateStudent(student);
             Message message = new Message(errorStatus);

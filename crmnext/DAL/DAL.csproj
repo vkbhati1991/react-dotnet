@@ -44,9 +44,13 @@
     <Compile Include="ConnectionString.cs" />
     <Compile Include="DALBase.cs" />
     <Compile Include="DataReader.cs" />
+    <Compile Include="MenuHelper\MenuHelper.cs" />
+    <Compile Include="MenuHelper\MenuTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentHelper\StudentHelper.cs" />
     <Compile Include="StudentHelper\StudentTranslator.cs" />
+    <Compile Include="SubMenuHelper\SubMenuHelper.cs" />
+    <Compile Include="SubMenuHelper\SubMenuTranslator.cs" />
     <Compile Include="UserHelper\UserHelper.cs" />
     <Compile Include="UserHelper\UserTranslator.cs" />
   </ItemGroup>

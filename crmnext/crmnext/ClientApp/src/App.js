@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
-// import { Route } from 'react-router';
+import React from 'react';
+import { Switch } from 'react-router';
+import { Layout } from "./components/Layout";
 import { Login } from './components/Login/Login';
-// import { Layout } from './components/Layout';
-// import { Home } from './components/Home';
-// import { FetchData } from './components/FetchData';
+import { PrivateRouteLogin } from "./components/Routes/PrivateRouteLogin";
+import { PrivateRoute } from "./components/Routes/PrivateRoute";
+import { Dashboard } from "./components/Routes/Dashboard";
+import { PageNotFound } from "./components/Routes/PageNotFound";
+import { Logout } from "./components/Login/Logout";
 
-export default class App extends Component {
-  
-  static displayName = App.name;
 
-  render() {
-    return (
-      <Login />
-      // <Layout>
-      //   <Route exact path='/' component={Login} />
-      //   <Route exact path='/Home' component={Home} />
-      //   <Route path='/fetch-data' component={FetchData} />
-      // </Layout>
-    );
-  }
+export default function App() {
+  return (
+    <Switch>
+      <PrivateRouteLogin exact path='/' component={Login} />
+      <Layout>
+        <Switch>
+          <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+          <PrivateRoute exact path='/Logout' component={Logout} />
+          <PrivateRoute exact path='*' component={PageNotFound} />
+        </Switch>
+      </Layout>
+    </Switch>
+  );
 }

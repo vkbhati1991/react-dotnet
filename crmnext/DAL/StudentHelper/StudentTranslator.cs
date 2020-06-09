@@ -150,7 +150,7 @@ namespace DAL.StudentHelper
                 student.IsActive = DataReader.GetNullableInt32(reader, "IsActive");
 
             if (reader.IsColoumnExist("Role"))
-                student.Role = DataReader.GetNullableString(reader, "Role");
+                student.Role = DataReader.GetNullableInt32(reader, "Role");
 
             if (reader.IsColoumnExist("IsSms"))
                 student.IsSms = DataReader.GetNullableInt32(reader, "IsSms");

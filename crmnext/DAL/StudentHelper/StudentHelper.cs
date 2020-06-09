@@ -66,7 +66,7 @@ namespace DAL.StudentHelper
                 new SqlParameter("@OldOrNew", DataReader.GetStringValue(student.OldOrNew)),
                 new SqlParameter("@PrevClass", DataReader.GetStringValue(student.PrevClass)),
                 new SqlParameter("@IsActive", DataReader.GetIntValue(student.IsActive)),
-                new SqlParameter("@Role", DataReader.GetStringValue(student.Role)),
+                new SqlParameter("@Role", DataReader.GetIntValue(student.Role)),
                 new SqlParameter("@IsSms", DataReader.GetIntValue(student.IsSms)),
                 new SqlParameter("@IsSpecialNeed", DataReader.GetIntValue(student.IsSpecialNeed)),
                 new SqlParameter("@RegistrationNo", DataReader.GetStringValue(student.RegistrationNo)),

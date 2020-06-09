@@ -8,7 +8,6 @@ function MnForm(props) {
     const { handleOnSubmit, actions, layout } = props;
     const [fields, setFields] = useState(props.fields);
     const [postData, setPostData] = useState(null);
-    const errorArray = [];
 
     useEffect(() => {
 
@@ -18,9 +17,9 @@ function MnForm(props) {
     }, [props, fields]);
 
 
-    const postOnSubmitData = () => {
+    function postOnSubmitData() {
 
-        const isValid = validate(fields, setFields, errorArray);
+        const isValid = validate(fields, setFields);
 
         if (isValid) {
             handleOnSubmit && handleOnSubmit(postData);
@@ -55,10 +54,38 @@ function MnForm(props) {
 
     }
 
-    function getFormActions() {
+    function getActionButtons() {
         return actions.map((action, idx) => {
-            return <button key={idx} onClick={postOnSubmitData} className="button button--brand">{action.text}</button>
+            if (action.type === "submit") {
+                return (
+                    <button method="post" key={idx} onClick={postOnSubmitData} className={`${action.className} pointer`} >
+                        {action.text}
+                    </button>
+                );
+            } else if (action.type === "link") {
+                if (action.href) {
+                    return (
+                        <a href={action.href} key={idx} className={`${action.className} pointer`}>
+                            {action.text}
+                        </a>
+                    );
+                }
+            }
+            return (
+                <span key={idx} className={`${action.className} pointer`}  >
+                    {action.text}
+                </span>
+            );
+
         });
+    }
+
+    function getFormActions() {
+        return (
+            <div className="button-row flex items-center">
+                {getActionButtons()}
+            </div>
+        )
     }
 
     return (

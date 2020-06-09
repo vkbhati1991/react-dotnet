@@ -55,7 +55,7 @@ namespace MODEL.UserField
         public string PermCountry { get; set; }
         public string PermLandMark { get; set; }
         public string CreatedOn { get; set; }
-        public string Role { get; set; }
+        public int Role { get; set; }
         public int IsActive { get; set; }
     }
 }

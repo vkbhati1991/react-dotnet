@@ -2066,116 +2066,116 @@ th {
   display: flex;
   align-items: center;
   border-radius: 0.25rem; }
-  /* line 13, SCSS/components/partials/alert/_index.scss */
+  /* line 15, SCSS/components/partials/alert/_index.scss */
   .alert__media {
     font-size: 1.25rem;
     margin-right: .75rem; }
-  /* line 18, SCSS/components/partials/alert/_index.scss */
+  /* line 20, SCSS/components/partials/alert/_index.scss */
   .alert__text {
     font-size: 1rem;
     flex: 1;
     flex: 100%; }
-  /* line 24, SCSS/components/partials/alert/_index.scss */
+  /* line 26, SCSS/components/partials/alert/_index.scss */
   .alert__link {
     cursor: pointer;
     text-decoration: underline; }
-  /* line 29, SCSS/components/partials/alert/_index.scss */
+  /* line 31, SCSS/components/partials/alert/_index.scss */
   .alert__close {
     font-size: 0.75rem;
     margin-left: .75rem;
     cursor: pointer; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--primary {
   color: black;
   border: 1px solid #484848;
   background: #888888; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--secondary {
   color: #090909;
   border: 1px solid #7b7b7b;
   background: #bbbbbb; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--success {
   color: #0a2c12;
   border: 1px solid #48d368;
   background: #afecbd; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--info {
   color: #062a30;
   border: 1px solid #36cee6;
   background: #a7e9f4; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--warning {
   color: #6d5200;
   border: 1px solid #ffd454;
   background: #fff4d3; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--danger {
   color: #66121a;
   border: 1px solid #e77681;
   background: #fae3e5; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--brand {
   color: #001e39;
   border: 1px solid #2097ff;
   background: #9fd2ff; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--near-black {
   color: black;
   border: 1px solid #484848;
   background: #888888; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--dark-gray {
   color: black;
   border: 1px solid #535353;
   background: #939393; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--mid-gray {
   color: #090909;
   border: 1px solid #7b7b7b;
   background: #bbbbbb; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--gray {
   color: #2b2b2b;
   border: 1px solid #9d9d9d;
   background: #dddddd; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--silver {
   color: #5d6974;
   border: 1px solid #d7dbdf;
   background: white; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--light-silver {
   color: gray;
   border: 1px solid #f2f2f2;
   background: white; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--moon-gray {
   color: #878d9a;
   border: 1px solid white;
   background: white; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--light-gray {
   color: #9e9e9e;
   border: 1px solid white;
   background: white; }
 
-/* line 37, SCSS/components/partials/alert/_index.scss */
+/* line 40, SCSS/components/partials/alert/_index.scss */
 .alert--near-white {
   color: #9fadba;
   border: 1px solid white;
@@ -4320,32 +4320,33 @@ a.aqua:hover, a.aqua:focus {
 .bg-aqua {
   background-color: #0070d2; }
 
-/* line 2, SCSS/utilities/alignment/_index.scss */
+/* line 1, SCSS/utilities/alignment/_index.scss */
 .v-base {
   vertical-align: baseline; }
 
-/* line 3, SCSS/utilities/alignment/_index.scss */
+/* line 5, SCSS/utilities/alignment/_index.scss */
 .v-mid {
   vertical-align: middle; }
 
-/* line 4, SCSS/utilities/alignment/_index.scss */
+/* line 9, SCSS/utilities/alignment/_index.scss */
 .v-top {
   vertical-align: top; }
 
-/* line 5, SCSS/utilities/alignment/_index.scss */
+/* line 13, SCSS/utilities/alignment/_index.scss */
 .v-bottom {
   vertical-align: bottom; }
 
-/* line 6, SCSS/utilities/alignment/_index.scss */
+/* line 17, SCSS/utilities/alignment/_index.scss */
 .v-text-top {
   vertical-align: text-top; }
 
-/* line 7, SCSS/utilities/alignment/_index.scss */
+/* line 21, SCSS/utilities/alignment/_index.scss */
 .v-text-bottom {
   vertical-align: text-bottom; }
 
-/* line 9, SCSS/utilities/alignment/_index.scss */
-.mid, .absolute-center {
+/* line 25, SCSS/utilities/alignment/_index.scss */
+.mid,
+.absolute-center {
   display: flex;
   flex-direction: row;
   align-items: center;

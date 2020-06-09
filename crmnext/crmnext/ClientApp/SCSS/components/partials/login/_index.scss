@@ -122,6 +122,9 @@ img {
     color: $brand;
 }
 
-.alert.alert--danger.login-alert .alert__text {
-    font-size: 13px;
+.login-invalid-alert {
+    right: 20px;
+    z-index: 20;
+    left: auto;
+    width: 57%;
 }

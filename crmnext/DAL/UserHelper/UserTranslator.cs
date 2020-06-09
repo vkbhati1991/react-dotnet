@@ -41,6 +41,8 @@ namespace DAL.UserHelper
                 user.Password = DataReader.GetNullableString(reader, "Password");
             if (reader.IsColoumnExist("IsActive"))
                 user.IsActive = DataReader.GetNullableInt32(reader, "IsActive");
+            if (reader.IsColoumnExist("Role"))
+                user.Role = DataReader.GetNullableInt32(reader, "Role");
 
             return user;
         }

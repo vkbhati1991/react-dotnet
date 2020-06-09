@@ -2461,5 +2461,8 @@ img {
   color: #0070d2; }
 
 /* line 125, SCSS/components/partials/login/_index.scss */
-.alert.alert--danger.login-alert .alert__text {
-  font-size: 13px; }
+.login-invalid-alert {
+  right: 20px;
+  z-index: 20;
+  left: auto;
+  width: 57%; }

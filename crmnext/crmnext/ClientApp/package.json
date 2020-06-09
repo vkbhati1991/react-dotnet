@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^4.1.3",
     "jquery": "^3.4.1",
     "merge": "^1.2.1",
@@ -35,7 +36,7 @@
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/",
-    "debug-css": "node-sass SCSS/theme -o public/assets/css/theme0 --source-comments"
+    "debug-css": "node-sass SCSS/theme -o public/assets/css/theme --source-comments"
   },
   "browserslist": {
     "production": [

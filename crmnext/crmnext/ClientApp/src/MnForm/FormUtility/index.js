@@ -14,7 +14,7 @@ function getPostData(props, fields) {
 //Check Validation for All Fields
 function checkValidation(value, validations) {
 
-    const { required, length } = validations;
+    const { required, length, pattern } = validations;
 
     if (required) {
         const requiredMessage = required.message;
@@ -35,16 +35,26 @@ function checkValidation(value, validations) {
         }
     }
 
+    if (pattern) {
+        const { regex, message } = pattern;
+        if(!regex.test(value)){
+            return {
+                isError: true,
+                message
+            }
+        }
+    }
+
     return {
         isError: false,
-        message: "length is small"
+        message: null
     }
 }
 
 //Validate ModalState or Form
-function validate(fields, setFields, errorArray) {
+function validate(fields, setFields) {
+    const errorArray = [];
     const fieldsWithError = {};
-
     Object.keys(fields).forEach((field) => {
         const currentfield = fields[field];
         const { isError, message } = checkValidation(currentfield.value, currentfield.validations);
@@ -56,14 +66,14 @@ function validate(fields, setFields, errorArray) {
         } else {
             currentfield["hasError"] = false;
             currentfield["validateMessage"] = "";
-            errorArray.splice(fieldIndex, 1);
+            fieldIndex >= 0  && errorArray.splice(fieldIndex, 1);
         }
 
         fieldsWithError[field] = currentfield;
     });
 
     setFields(fieldsWithError);
-
+   
     return errorArray.length === 0;
 }
 

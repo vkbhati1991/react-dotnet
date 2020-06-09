@@ -1,6 +1,10 @@
+using DAL.MenuHelper;
 using DAL.StudentHelper;
+using DAL.SubMenuHelper;
 using DAL.UserHelper;
+using IDAL.IMenu;
 using IDAL.IStudent;
+using IDAL.ISubMenu;
 using IDAL.IUser;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -71,6 +75,9 @@ namespace APP
             });
             services.AddScoped<IUser, UserHelper>();
             services.AddScoped<IStudent, StudentHelper>();
+            services.AddScoped<IMenu, MenuHelper>();
+            services.AddScoped<ISubMenu, SubMenuHelper>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

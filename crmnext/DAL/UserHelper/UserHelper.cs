@@ -28,6 +28,7 @@ namespace DAL.UserHelper
                 new SqlParameter("@Email", DataReader.GetStringValue(user.Email)),
                 new SqlParameter("@Password", DataReader.GetStringValue(user.Password)),
                 new SqlParameter("@IsActive", DataReader.GetIntValue(user.IsActive)),
+                new SqlParameter("@Role", DataReader.GetIntValue(user.IsActive)),
                 outParam
             };
 
